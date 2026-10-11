@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Product Catalog</h1>
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Filter by title..."
+            aria-label="Filter by product title"
+          />
+        </div>
+      </header>
+      <main>
+        <!-- Target UL container for dynamic rendering -->
+        <ul class="product-grid" id="product-list">
+          <!-- SAMPLE CARD TEMPLATE (Clear container before dynamic injection) -->
+          <!-- Toggle class dynamically on <li class="product-card">: 
+             Use 'show-details' when product.detailsVisible is true, otherwise omit it -->
+          <li class="product-card" data-id="1">
+            <article class="card-content">
+              <header class="card-header">
+                <!-- Replace thumbnail src and alt with dynamic data -->
+                <img
+                  class="product-thumb"
+                  src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp"
+                  alt="Essence Mascara Lash Princess"
+                />
+                <div class="header-text">
+                  <!-- Replace with product category -->
+                  <span class="category-tag">beauty</span>
+                  <!-- Replace with dynamic product title -->
+                  <h2 class="product-title">Essence Mascara Lash Princess</h2>
+                  <!-- Replace with dynamic brand -->
+                  <p class="brand-name">Brand: Essence</p>
+                </div>
+              </header>
+
+              <div class="card-body">
+                <div class="price-row">
+                  <!-- Replace with dynamic price -->
+                  <span class="price">$9.99</span>
+                  <!-- Replace with dynamic availability status -->
+                  <span class="badge in-stock">In Stock</span>
+                </div>
+
+                <!-- Toggleable Extra Details Container -->
+                <div class="extra-details">
+                  <!-- Replace with product description -->
+                  <p class="description">
+                    The Essence Mascara Lash Princess is a popular mascara known
+                    for its volumizing and lengthening effects...
+                  </p>
+                  <p class="info-row">
+                    <strong>SKU:</strong> <span>BEA-ESS-ESS-001</span>
+                  </p>
+                  <p class="info-row">
+                    <strong>Warranty:</strong> <span>1 week warranty</span>
+                  </p>
+                  <p class="info-row">
+                    <strong>Shipping:</strong>
+                    <span>Ships in 3-5 business days</span>
+                  </p>
+                </div>
+              </div>
+
+              <footer class="card-footer">
+                <button class="toggle-btn" type="button">
+                  <!-- 
+                  Conditionally display button text:
+                  If product.detailsVisible === true -> 'Hide Details'
+                  If product.detailsVisible === false -> 'Show Details'
+                -->
+                  Show Details
+                </button>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

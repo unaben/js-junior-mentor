@@ -1,0 +1,46 @@
+Task: Train Fare Calculator
+Description In this exercise, you'll build a train fare calculator. You will take the user's age and travel distance, calculate the base fare using a fixed rate per kilometer, apply any applicable age-based discounts, and display the final ticket price formatted in Pounds (£).
+Part 1: Basic Calculator (Main Task)
+Instructions & Step-by-Step Guidance
+	1	Gather Inputs:
+	◦	Prompt the user for their age and store it as a number.
+	◦	Prompt the user for their travel distance in kilometers and store it as a number.
+	◦	Tip: Inputs from prompt() come back as strings—convert them to numbers using Number() or parseInt() / parseFloat().
+	2	Define Base Rates & Calculate Base Fare:
+	◦	Create a constant for the rate per kilometer: const PRICE_PER_KM = 0.21;.
+	◦	Calculate the base fare: distance * PRICE_PER_KM.
+	3	Apply Age Discounts:
+	◦	Junior (< 18 years old): 20% discount (pays 80% of base fare).
+	◦	Senior (> 65 years old): 40% discount (pays 60% of base fare).
+	◦	Standard (18–65 years old): Standard price (no discount).
+	◦	Tip: Use if / else if / else conditional blocks to apply the correct multiplier.
+	4	Format & Display Output:
+	◦	Format the final price to 2 decimal places using the .toFixed(2) string method.
+	◦	Use Template Literals (backticks `) to display an alert() showing the calculated ticket price (e.g., "Your final ticket price is £12.60").
+Part 2: Dynamic Station Lookup (Challenge)
+Rewrite your program so that instead of manually entering kilometers, the user selects a starting station and a destination station.
+Challenge Guidance & Architecture Tips
+	1	Single Source of Truth:
+	◦	Keep PRICE_PER_KM as a single variable at the top of your script so changing it updates all price calculations automatically across the entire app.
+	2	Data Structure (Distance Map):
+	◦	Create an object or map to store fixed distances between stations relative to a central starting point (or distance between fixed routes).
+	◦	
+		Example: JavaScript Object
+const stations = {
+	◦	  "London": 0,
+	◦	  "Reading": 60,
+	◦	  "Birmingham": 180,
+	◦	  "Manchester": 330
+	◦	};
+	◦	
+	3	Calculate Distance Dynamically:
+	◦	Ask the user for their origin station and destination station.
+	◦	Calculate the absolute distance between them using Math.abs(stations[destination] - stations[origin]).
+	4	Calculate & Output:
+	◦	Pass the calculated distance and user's age into your existing discount logic to determine and display the final price.
+Key Concepts to Practice:
+	•	Data Types & Parsing: Converting string prompt inputs into numbers.
+	•	Control Flow: if / else if / else conditional statements.
+	•	Objects & Property Lookup: Storing and retrieving key-value pairs.
+	•	Math Methods: Math.abs() for distance calculations and .toFixed(2) for monetary formatting.
+	•	Template Literals: Clean string interpolation for user alerts.

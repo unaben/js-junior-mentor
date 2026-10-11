@@ -1,0 +1,85 @@
+Task: Name Normalization Challenge
+Write a JavaScript script that prompts the user for their name and displays a personalized greeting in standard Title Case (capitalizing only the first letter, with all remaining letters in lowercase), regardless of how the user types it in.
+Instructions & Requirements
+1. User Input
+	•	Use prompt() to ask the user: "What is your name?".
+	•	Store the input string in a variable.
+2. String Manipulation
+Process the input string so that it handles any irregular casing (e.g., bENEDICT, benedict, or BENEDICT should all output Benedict).
+	•	Extract the first character: Use .slice() or string indexing to isolate the very first letter of the name.
+	•	Extract the remaining characters: Use .slice() to isolate everything from the second letter to the end of the string.
+	•	Format the first letter: Convert the first character to uppercase using .toUpperCase().
+	•	Format the remaining letters: Convert the rest of the string to lowercase using .toLowerCase().
+	•	Combine: Concatenate the formatted first character and formatted remaining characters into a single normalized variable.
+3. Output
+	•	Use alert() to display the final formatted greeting to the user (e.g., "Hello, Benedict!").
+Key Concepts to Focus On:
+	•	String Methods: Practicing .slice(), .toUpperCase(), and .toLowerCase().
+	•	Variable Declaration & Concatenation: Storing intermediate steps cleanly and combining strings using the + operator (or template literals).
+	•	Basic Browser I/O: Using prompt() for user input and alert() for output.
+
+Second task
+Task: Username Formatting & Handle Generator
+Write a JavaScript script that prompts a user for their full name (first and last name) and automatically generates a clean, standardized social media handle formatted as @firstname_lastname in all lowercase, regardless of how they type it or any extra spaces they include.
+
+Instructions & Requirements
+1. User Input
+Use prompt() to ask the user: "Enter your first and last name:" (e.g., "  Jane  DOe  ").
+
+Store the input string in a variable.
+
+2. String Manipulation
+Process the input string using native JavaScript string methods:
+
+Trim extra whitespace: Remove any accidental spaces at the beginning and end of the input string using .trim().
+
+Convert to lowercase: Make the entire string lowercase using .toLowerCase().
+
+Replace middle spaces: Replace the space between the first and last name with an underscore (_) using .replace().
+
+Add handle prefix: Add @ to the front of the formatted name string.
+
+3. Output
+Use alert() to display the generated handle (e.g., "Your generated handle is: @jane_doe").
+
+Key Concepts to Focus On:
+String Methods: Practicing .trim(), .toLowerCase(), and .replace().
+
+Method Chaining: Combining multiple string methods together in a logical sequence.
+
+Basic Browser I/O: Capturing input with prompt() and displaying the result with alert().
+
+Third task
+Task: Email Masker & Privacy Tool
+Write a JavaScript script that prompts the user for their email address and uses Template Literals (backticks ` and ${}) to construct a masked, privacy-protected version of the email for display.
+
+Instructions & Requirements
+1. User Input
+Use prompt() to ask the user: "Enter your email address:" (e.g., "benedict@example.com").
+
+Store the input string in a variable.
+
+2. String Manipulation
+Process the email string using JavaScript string methods:
+
+Find the @ symbol position: Use .indexOf('@') to find where the domain name starts.
+
+Extract the username (before @): Use .slice() to isolate the username part.
+
+Extract the first character: Isolate just the first letter of the username.
+
+Extract the domain (from @ onwards): Use .slice() to capture everything from the @ symbol to the end of the string.
+
+Build the masked string: Combine the first character, three asterisks (***), and the domain.
+
+3. Output Using Template Literals
+Use Template Literals (backticks ` and ${}) to output a formatted notification using alert().
+
+Example Output: "Your email benedict@example.com has been masked to: b***@example.com"
+
+Key Concepts to Practice:
+Template Literals: Using backticks ` and string interpolation ${variable} instead of + concatenation.
+
+String Search: Using .indexOf() to find character positions dynamically.
+
+String Slicing: Extracting substrings based on dynamic index positions.

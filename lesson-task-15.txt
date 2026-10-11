@@ -1,0 +1,36 @@
+Task: E-Commerce Shipping & Freight Calculation Engine
+Description
+In this exercise, you will build a freight calculation engine for an e-commerce warehouse. You'll write a helper function to determine shipping costs based on package weight and destination, and an orchestrator function that processes a list of pending orders to calculate total fulfillment costs.
+Starter Data
+Copy this array of customer orders into your script:
+JavaScript
+
+const pendingOrders = [
+  { orderId: "ORD-101", weightKg: 2.5, destination: "UK" },
+  { orderId: "ORD-102", weightKg: 8.0, destination: "EU" },
+  { orderId: "ORD-103", weightKg: 15.0, destination: "UK" },
+  { orderId: "ORD-104", weightKg: 4.0, destination: "INT" }
+];
+Instructions & Step-by-Step Guidance
+	1	Function 1: calculateShippingFee(weightKg, destination)
+	◦	Declare a function named calculateShippingFee that takes two parameters: weightKg (number) and destination (string).
+	◦	Pricing Rules:
+	▪	UK Domestic: Base fee is £5.00. If weightKg > 10, add a £10.00 heavy item surcharge.
+	▪	EU Regional: Base fee is £12.00. If weightKg > 5, add a £8.00 heavy item surcharge.
+	▪	International ("INT"): Base fee is £25.00 flat rate regardless of weight.
+	◦	Return the computed shipping cost number from the function.
+
+	2	Function 2: generateShippingManifest(orders)
+	◦	Declare a function named generateShippingManifest that accepts orders (an array).
+	◦	Inside the function:
+	▪	Create an empty array manifestReport = [].
+	▪	Loop through the orders array using a standard for loop.
+	▪	For each order, invoke calculateShippingFee(order.weightKg, order.destination) to get the shipping fee.
+	▪	Push a summary object into manifestReport in this format: { orderId: order.orderId, destination: order.destination, shippingCost: "£X.XX" } (Hint: use .toFixed(2) to format the fee).
+	◦	Return the completed manifestReport array from the function.
+	3	Execution & Testing:
+	◦	Call generateShippingManifest(pendingOrders) inside a console.log() statement to inspect the final manifest.
+Key Concepts to Practice:
+	•	Multi-branch Logic inside Functions: Handling combined conditions (if/else if) using numbers and strings.
+	•	Return Values: Passing calculated numbers back to the caller.
+	•	Function Composition: Calling calculateShippingFee dynamically inside the iteration loop of generateShippingManifest.

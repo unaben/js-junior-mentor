@@ -1,0 +1,176 @@
+const store = {
+  location: "London",
+  products: [
+    {
+      name: "iPhone 6S",
+      type: "mobile",
+      stock: {
+        incomingDelivery: false,
+        quantity: 450
+      },
+      price: 600
+    },
+    {
+      name: "iPhone 10",
+      type: "mobile",
+      stock: {
+        incomingDelivery: false,
+        quantity: 20
+      },
+      price: 1000
+    },
+    {
+      name: "iPhone 12",
+      type: "mobile",
+      stock: {
+        incomingDelivery: true,
+        quantity: 0
+      },
+      price: 1400
+    },
+    {
+      name: "iPad Pro",
+      type: "tablet",
+      stock: {
+        incomingDelivery: true,
+        quantity: 100
+      },
+      price: 600
+    },
+    {
+      name: "iPad mini",
+      type: "tablet",
+      stock: {
+        incomingDelivery: false,
+        quantity: 300
+      },
+      price: 600
+    },
+    {
+      name: "iMac",
+      type: "computer",
+      stock: {
+        incomingDelivery: true,
+        quantity: 15
+      },
+      price: 2300
+    },
+    {
+      name: "MacBook Pro",
+      type: "computer",
+      stock: {
+        incomingDelivery: false,
+        quantity: 80
+      },
+      price: 2400
+    },
+    {
+      name: "MacBook Air",
+      type: "computer",
+      stock: {
+        incomingDelivery: false,
+        quantity: 200
+      },
+      price: 1800
+    }
+  ]
+};
+
+console.log(store);
+
+// Each section needs it's own for loop
+// DO NOT change any of the code
+//
+// For sections with "A list of..." the output should be an array full of objects
+// Output:
+// => [{...}, {...}, {...}]
+//
+// For sections with "An object..." the output should be an object
+// Output:
+// => {...}
+
+const products = store.products;
+
+// ----- Section -----
+
+// A list of products that cost more than £1000
+const expensiveProducts = [];
+
+
+// ----- Section -----
+
+// A list of products that cost less than £1000
+const cheapProducts = [];
+
+// Write a for loop here...
+
+// ----- Section -----
+
+// A list of products that have an incoming delivery
+const productsThatNeedToBeReceived = [];
+
+
+// ----- Section -----
+
+// A list of products that are out of stock
+const outOfStockProducts = [];
+
+// ----- Section -----
+
+// A list of products that have a quantity that is less than 100 and have no incoming delivery
+const productsThatNeedToBeOrdered = [];
+
+// ----- Section -----
+
+// A list of products of the type "tablet"
+const tablets = [];
+
+// ----- Section -----
+
+// A list of products of the type "computer"
+const computers = [];
+
+// ----- Section -----
+
+// An object that represents an "iMac"
+let iMac = null
+
+// ----- Section -----
+
+// An object that represents an "iPhone 12"
+let iPhone12 = null;
+
+// ----- Section -----
+
+// An object that represents an "iPad Mini"
+let iPadMini = null;
+
+// ----- Section -----
+
+// An numbers that represents the total quantity of stocked products
+let totalQuantityOfStock = 0;
+
+// ----- CHALLENGE -----
+
+// A list of unique product types
+const productTypes = [];
+
+// Output:
+// => ["mobile", "computer", "tablet"]
+
+// An object that represents the most expensive product
+let theMostExpensiveProduct = null;
+
+
+// An object that represents the least expensive product
+const theLeastExpensiveProduct = null;
+
+// An object that represents the most expensive product
+const theMostStockedProduct = null;
+
+// An object that represents the least expensive product
+const theLeastStockedProduct = null;
+
+// Use the "stores" array in the challenge.js file
+// And do the above again, collecting data from all stores.
+

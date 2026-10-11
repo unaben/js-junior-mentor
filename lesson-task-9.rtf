@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22160\viewh13440\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \
+Task 9: Smart Room Booking & Security Access Engine\
+\
+Description\
+\
+Build a security access system for an office building. The program checks if an employee is allowed to book a specific meeting room based on their access clearance level, the time of day, and whether the room requires executive approval.\
+Instructions & Step-by-Step Guidance\
+\
+	1	Setup Inputs:\
+	\uc0\u9702 	Prompt the user for their security clearance level (prompt('Enter your clearance level (1, 2, or 3):')). Convert this input to a number.\
+	\uc0\u9702 	Prompt the user for the booking hour in 24-hour format (  ). Convert this input to a number.\
+	\uc0\u9702 	Prompt the user if the room is an Executive Suite (prompt('Is this the Executive Suite? (yes/no)')).\
+\
+	2	Access Control & Guard Clause:\
+	\uc0\u9702 	If the user enters an invalid hour (less than 0 or greater than 23), output an alert() saying: "Invalid time entered. Please enter a 		hour between 0 and 23." and stop further execution.\
+\
+	3	Conditional Access Rules:\
+	\uc0\u9702 	Executive Suite Rule: If the room is an Executive Suite ("yes"), the user MUST have a clearance level of 3. If their clearance is 		lower than 3, deny access: "Access Denied: Executive Suite requires Level 3 clearance."\
+	\uc0\u9702 	After-Hours Rule: If the booking time is before 8 (8 AM) or after 18 (6 PM), the user MUST have a clearance level of 2 or higher. If 		their clearance is lower than 2, deny access: "Access Denied: After-hours bookings require at least Level 2 clearance."\
+	\uc0\u9702 	Standard Access: If none of the restriction conditions above block the user, grant access.\
+\
+	4	Output:\
+	\uc0\u9702 	Use Template Literals (backticks `) to display an alert() showing the outcome.\
+	\uc0\u9702 	Success Example: "Booking Approved: Room reserved successfully for hour 14:00 with Level 2 clearance."\
+\
+Key Concepts to Practice:\
+	\'95	Logical Operators: Combining conditions using && (AND), || (OR), and ! (NOT).\
+	\'95	Input Guard Clauses: Validating user input before running main business logic.\
+	\'95	Complex if / else if / else Branching: Handling multiple independent security rules in order of priority.
+\fs24 \
+}

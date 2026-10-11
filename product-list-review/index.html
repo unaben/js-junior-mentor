@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog with Reviews</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Product Catalog</h1>
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Filter by title..."
+            aria-label="Filter by product title"
+          />
+        </div>
+      </header>
+
+      <main>
+        <ul class="product-grid" id="product-list">
+          <!-- SAMPLE CARD TEMPLATE -->
+          <li class="product-card" data-id="1">
+            <article class="card-content">
+              <header class="card-header">
+                <img
+                  class="product-thumb"
+                  src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp"
+                  alt="Essence Mascara Lash Princess"
+                />
+                <div class="header-text">
+                  <span class="category-tag">beauty</span>
+                  <h2 class="product-title">Essence Mascara Lash Princess</h2>
+                  <p class="brand-name">Brand: Essence</p>
+                </div>
+              </header>
+
+              <div class="card-body">
+                <div class="price-row">
+                  <span class="price">$9.99</span>
+                  <span class="badge in-stock">In Stock</span>
+                </div>
+
+                <!-- Toggleable Extra Details Container -->
+                <div class="extra-details">
+                  <p class="description">
+                    The Essence Mascara Lash Princess is a popular mascara known
+                    for its volumizing and lengthening effects...
+                  </p>
+                  <p class="info-row">
+                    <strong>SKU:</strong> <span>BEA-ESS-ESS-001</span>
+                  </p>
+                  <p class="info-row">
+                    <strong>Warranty:</strong> <span>1 week warranty</span>
+                  </p>
+                  <p class="info-row">
+                    <strong>Shipping:</strong>
+                    <span>Ships in 3-5 business days</span>
+                  </p>
+
+                  <!-- REVIEWS SECTION -->
+                  <section class="reviews-section">
+                    <h3 class="reviews-title">Customer Reviews (3)</h3>
+                    <ul class="reviews-list">
+                      <li class="review-item">
+                        <div class="review-header">
+                          <span class="stars">★★★☆☆</span>
+                          <span class="reviewer-name">Eleanor Collins</span>
+                        </div>
+                        <p class="review-comment">"Would not recommend!"</p>
+                        <time class="review-date">30/04/2025</time>
+                      </li>
+
+                      <li class="review-item">
+                        <div class="review-header">
+                          <span class="stars">★★★★☆</span>
+                          <span class="reviewer-name">Lucas Gordon</span>
+                        </div>
+                        <p class="review-comment">"Very satisfied!"</p>
+                        <time class="review-date">30/04/2025</time>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+              </div>
+
+              <footer class="card-footer">
+                <button class="toggle-btn" type="button">
+                  Show Details & Reviews
+                </button>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

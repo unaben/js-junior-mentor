@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Photo Gallery</h1>
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Filter by title..." 
+          aria-label="Filter photos by title"
+        />
+      </div>
+    </header>
+
+    <main>
+      <ul class="photo-grid" id="photo-list">
+        
+        <!-- SAMPLE CARD TEMPLATE -->
+        <!-- Toggle class dynamically: 'photo-card show-details' when detailsVisible === true -->
+        <li class="photo-card" data-id="1">
+          <article class="card-content">
+            <header class="card-header">
+              <img 
+                class="photo-thumb" 
+                src="https://picsum.photos/seed/1/150" 
+                alt="accusamus beatae ad facilis cum similique qui sunt" 
+              />
+              <div class="header-text">
+                <span class="album-badge">Album #1</span>
+                <h2 class="photo-title">accusamus beatae ad facilis cum similique qui sunt</h2>
+              </div>
+            </header>
+
+            <div class="card-body">
+              <!-- Toggleable Extra Details Container -->
+              <div class="extra-details">
+                <p class="info-row"><strong>Photo ID:</strong> <span>1</span></p>
+                <p class="info-row"><strong>Full Image URL:</strong> <a href="https://picsum.photos/seed/1/600" target="_blank" rel="noopener">View Full Image</a></p>
+                <p class="info-row"><strong>Dimensions:</strong> <span>600 x 600 px</span></p>
+              </div>
+            </div>
+
+            <footer class="card-footer">
+              <button class="toggle-btn" type="button">
+                Show Details
+              </button>
+            </footer>
+          </article>
+        </li>
+
+      </ul>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

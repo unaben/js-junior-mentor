@@ -1,0 +1,144 @@
+Task Set 1: Single for Loops (Using the store object)
+Copy your existing store object into your script and solve these tasks using standard for loops (for (let i = 0; i < store.products.length; i++)).
+
+const store = {
+  location: "London",
+  products: [
+    {
+      name: "iPhone 6S",
+      type: "mobile",
+      stock: {
+        incomingDelivery: false,
+        quantity: 450
+      },
+      price: 600
+    },
+    {
+      name: "iPhone 10",
+      type: "mobile",
+      stock: {
+        incomingDelivery: false,
+        quantity: 20
+      },
+      price: 1000
+    },
+    {
+      name: "iPhone 12",
+      type: "mobile",
+      stock: {
+        incomingDelivery: true,
+        quantity: 0
+      },
+      price: 1400
+    },
+    {
+      name: "iPad Pro",
+      type: "tablet",
+      stock: {
+        incomingDelivery: true,
+        quantity: 100
+      },
+      price: 600
+    },
+    {
+      name: "iPad mini",
+      type: "tablet",
+      stock: {
+        incomingDelivery: false,
+        quantity: 300
+      },
+      price: 600
+    },
+    {
+      name: "iMac",
+      type: "computer",
+      stock: {
+        incomingDelivery: true,
+        quantity: 15
+      },
+      price: 2300
+    },
+    {
+      name: "MacBook Pro",
+      type: "computer",
+      stock: {
+        incomingDelivery: false,
+        quantity: 80
+      },
+      price: 2400
+    },
+    {
+      name: "MacBook Air",
+      type: "computer",
+      stock: {
+        incomingDelivery: false,
+        quantity: 200
+      },
+      price: 1800
+    }
+  ]
+};
+
+Task 1.1: Restock Alert
+Create an empty array productsThatNeedToBeOrdered = []. Write a for loop to find all products where stock.quantity < 100 AND stock.incomingDelivery === false. Push the product's name and current quantity into the array as an object { name, quantity }.
+
+Task 1.2: Valuation per Category
+Create an empty object computerInventoryValuation = 0. Write a for loop to calculate the total monetary value of all computers in stock (Formula: quantity * price for every product where type === "computer").
+
+Task 1.3: Incoming Stock Name List
+Create an empty array incomingProductNames = []. Write a for loop that collects just the name (as a string) of every product that has stock.incomingDelivery === true.
+
+Task Set 2: Nested for Loops (Loop Inside a Loop)
+To test nested for loops, we need a structure where an array contains objects that themselves contain nested arrays (e.g., a multi-store warehouse network with regional inventories).
+Starter Data Structure
+JavaScript
+
+const regionalWarehouses = [
+  {
+    warehouseId: "WH-UK-NORTH",
+    region: "Manchester",
+    inventory: [
+      { item: "Laptop Stand", quantity: 50, reorderPoint: 20 },
+      { item: "USB-C Hub", quantity: 12, reorderPoint: 15 },
+      { item: "Mechanical Keyboard", quantity: 8, reorderPoint: 10 }
+    ]
+  },
+  {
+    warehouseId: "WH-UK-MIDLANDS",
+    region: "Birmingham",
+    inventory: [
+      { item: "Monitor Arm", quantity: 100, reorderPoint: 30 },
+      { item: "USB-C Hub", quantity: 5, reorderPoint: 15 },
+      { item: "Ergonomic Mouse", quantity: 45, reorderPoint: 10 }
+    ]
+  },
+  {
+    warehouseId: "WH-UK-SOUTH",
+    region: "London",
+    inventory: [
+      { item: "Laptop Stand", quantity: 15, reorderPoint: 20 },
+      { item: "Mechanical Keyboard", quantity: 90, reorderPoint: 10 },
+      { item: "USB-C Hub", quantity: 2, reorderPoint: 15 }
+    ]
+  }
+];
+
+Instructions for Nested Loop Tasks
+
+Task 2.1: Complete Network Item Report
+Write a nested for loop (outer loop through warehouses, inner loop through inventory) to log every item across all warehouses in this format:
+"Manchester Warehouse: Laptop Stand - 50 in stock"
+
+Task 2.2: Cross-Regional Low Stock Collector
+Create an empty array criticalLowStock = []. Write a nested for loop to inspect every inventory item in every warehouse.
+If quantity < reorderPoint, push an object into criticalLowStock in this format:
+{ warehouse: warehouse.region, item: item.item, deficit: item.reorderPoint - item.quantity }
+
+Task 2.3: Global Item Total Calculator
+Write a nested for loop to calculate the total combined quantity of "USB-C Hub" available across all three warehouses combined.
+
+
+Key Concepts to Focus On:
+	•	Logical && Conditionals: Checking multiple criteria (quantity < 100 && !incomingDelivery).
+	•	Outer Loop Index vs. Inner Loop Index: Keeping track of i (outer array index) vs. j (inner array index) in nested loops.
+	•	Property Traversing: Reaching into nested properties dynamically (warehouses[i].inventory[j].quantity).

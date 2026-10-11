@@ -1,0 +1,37 @@
+Task: Build a Centered Customer Enquiry Form
+Today we're building a customer enquiry form. Forms can be tricky to style from scratch, so take your time to get the alignment, 
+input fields, and custom gradients right.
+Instructions & Layout Requirements
+1. Page Centering & Gradient Background
+	•	Page Container: Set the body or wrapper element to span full height (min-height: 100vh).
+	•	Centering: Use Flexbox (display: flex, justify-content: center, align-items: center) 
+to position the form card perfectly in the middle of the screen horizontally and vertically.
+	•	Background Gradient: Use CSS linear-gradient() on the body transitioning diagonally (e.g., 135deg)
+ from blue/cyan on the bottom-left to magenta/purple on the top-right.
+2. Form Card Container
+	•	White background, large rounded corners (border-radius: 16px or 20px), and generous inner spacing (padding).
+	•	Give it a fixed maximum width (e.g., max-width: 450px).
+	•	Title: Use an <h1> tag centered at the top: "Say Hello!".
+3. Form Fields & Elements
+Wrap all input elements inside a <form> tag with semantic labels:
+	•	Text Inputs (Your Name, Email):
+	◦	Use <label> for field titles (Your Name, Email).
+	◦	Use <input type="text"> and <input type="email"> with light grey placeholder text ("Enter your name", "Enter your email address").
+	•	Dropdown Selects (Needed Services, Budget):
+	◦	Use <label> for titles (Needed Services, Budget).
+	◦	Use <select> elements with <option> tags, setting default disabled placeholder options ("Choose Services", "Select Budget").
+	•	Textarea (Message):
+	◦	Use <label> for Message.
+	◦	Use <textarea> with placeholder text ("Your message here...").
+	•	Custom Field Styling:
+	◦	Remove default thick borders (border: none).
+	◦	Add a subtle light grey bottom border (border-bottom: 1px solid #e0e0e0) to mirror the clean line-input look in the image.
+	◦	Adjust :focus states using outline: none to keep the focus state clean.
+4. Submit Button
+	•	Use a <button type="submit"> displaying Submit →.
+	•	Gradient Styling: Apply a horizontal linear gradient background (linear-gradient(to right, #d82ff0, #38c8ea)).
+	•	Give it full width (width: 100%), bold white text, pill-shaped rounded borders (border-radius: 30px), and remove default borders.
+Key Concepts to Focus On:
+	•	CSS Linear Gradients: Applying background: linear-gradient(...) to both the body and the submit button.
+	•	Form Customization: Overriding browser-default input styles (border, outline, padding).
+	•	Flexbox Centering: Positioning a card in the exact center of the viewport using min-height: 100vh.

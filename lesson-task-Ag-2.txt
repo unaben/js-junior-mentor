@@ -1,0 +1,109 @@
+📦 Sample Dataset (inventory)
+Have the junior developer use this exact nested dataset for all tasks:
+JavaScript
+
+const inventory = [
+  {
+    id: "PROD-01",
+    name: "Wireless Ergonomic Mouse",
+    category: "Electronics",
+    inStock: true,
+    variants: [
+      { sku: "M-BLK", color: "Black", price: 49.99, stock: 15 },
+      { sku: "M-WHT", color: "White", price: 54.99, stock: 0 }
+    ],
+    reviews: [
+      { rating: 5, user: "Alice", tags: ["durable", "ergonomic"] },
+      { rating: 4, user: "Bob", tags: ["comfortable"] }
+    ]
+  },
+  {
+    id: "PROD-02",
+    name: "Mechanical Keyboard",
+    category: "Electronics",
+    inStock: true,
+    variants: [
+      { sku: "K-RGB", color: "RGB", price: 119.99, stock: 8 },
+      { sku: "K-GRY", color: "Gray", price: 99.99, stock: 3 }
+    ],
+    reviews: [
+      { rating: 3, user: "Charlie", tags: ["noisy", "sturdy"] },
+      { rating: 5, user: "Diana", tags: ["responsive"] }
+    ]
+  },
+  {
+    id: "PROD-03",
+    name: "Bamboo Desk Organizer",
+    category: "Office",
+    inStock: false,
+    variants: [
+      { sku: "O-NAT", color: "Natural", price: 29.99, stock: 0 }
+    ],
+    reviews: []
+  },
+  {
+    id: "PROD-04",
+    name: "USB-C Dual Monitor Dock",
+    category: "Electronics",
+    inStock: true,
+    variants: [
+      { sku: "D-SLV", color: "Silver", price: 189.99, stock: 5 },
+      { sku: "D-BLK", color: "Black", price: 189.99, stock: 12 }
+    ],
+    reviews: [
+      { rating: 2, user: "Evan", tags: ["overheating", "glitchy"] },
+      { rating: 4, user: "Fiona", tags: ["durable", "fast-charging"] }
+    ]
+  }
+];
+
+🏋️ Level 1: Outer & 2-Level Nested Loops
+Task 1: Total Product Count
+Write a standard for loop to count the total number of top-level product objects in inventory. Log the final count to the console.
+
+Task 2: Calculate Total Stock Across All Variants
+Declare a variable totalStock = 0. Write nested for loops to iterate through each product and its nested variants array. Add up the stock property of every variant and log totalStock.
+
+Task 3: Extract All SKUs
+Declare an empty array allSKUs = []. Write nested for loops to iterate through each product and its variants array, pushing every sku string into allSKUs. Log allSKUs.
+
+Task 4: Find Out-of-Stock Variants
+Declare an empty array outOfStockSKUs = []. Write nested for loops to inspect every variant across all products. If a variant has stock === 0, push its sku into outOfStockSKUs. Log outOfStockSKUs.
+🏋️ Level 2: 3-Level Deep Nesting & Conditional Aggregations
+
+Task 5: Collect Unique Review Tags (3 Levels Deep)
+Declare an empty array uniqueTags = []. Write nested for loops to navigate: Product $\rightarrow$ Review $\rightarrow$ Tag. Push each tag string into uniqueTags only if it is not already present in the array (check manually or with a loop/includes check). Log uniqueTags.
+
+Task 6: Find Highest Priced Variant Across Inventory
+Declare a variable mostExpensive = null or track maxPrice = 0. Write nested for loops to inspect every variant in every product. Store an object with { productName, sku, price } for the single highest-priced variant found. Log the result.
+
+Task 7: Average Rating Per Product
+Declare an empty array productRatings = []. Write a nested for loop to calculate the average review rating for each product. Push an object { productName: string, avgRating: number } into productRatings. If a product has no reviews, set avgRating to 0. Log productRatings.
+
+Task 8: Count Specific Tag Mentions
+Declare a variable targetTag = "durable" and tagCount = 0. Write nested for loops through products, reviews, and review tags to count how many times "durable" appears across the entire inventory. Log tagCount.
+🏋️ Level 3: Data Transformation & Complex Search
+
+Task 9: Search Products by Review Tag
+Declare a variable searchTag = "durable" and an empty array matchingProductNames = []. Write nested for loops to find all product names that have at least one review containing "durable". Use break to exit the inner review loop once a match is found for a product so duplicate names aren't added. Log matchingProductNames.
+
+Task 10: Find Variants Above a Specific Price
+Declare a variable targetPrice = 100 and an empty array expensiveItems = []. Write nested for loops to inspect every variant. If a variant's price is greater than targetPrice, push an object { productName: product.name, sku: variant.sku, price: variant.price } into expensiveItems. Log expensiveItems.
+
+Task 11: Flag "High-Rated" Electronics
+Declare an empty array topElectronics = []. Write nested for loops to check products in the "Electronics" category. Calculate each product's average rating; if it has at least 2 reviews and an average rating of 4.0 or higher, push the product's name into topElectronics. Log topElectronics.
+
+Task 12: Flatten Inventory for Table Rendering
+Declare an empty array flatInventory = []. Write nested for loops to flatten the nested data structure into a single array of flat objects suitable for an HTML table. Each object pushed into flatInventory must look like this:
+JavaScript
+
+{
+  productId: "PROD-01",
+  productName: "Wireless Ergonomic Mouse",
+  sku: "M-BLK",
+  color: "Black",
+  price: 49.99,
+  stock: 15,
+  reviewCount: 2
+}
+Log flatInventory.

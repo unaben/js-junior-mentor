@@ -1,0 +1,191 @@
+Task: Dynamic E-Commerce Product Catalog with Status Filtering
+Description
+In this task, you will build an interactive product catalog. You will dynamically render a list of products from an array of objects, filter the list in real time based on user text input, apply conditional styling for out-of-stock items, and allow users to toggle stock availability using a click event listener.
+HTML Starter Structure (index.html)
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog Filter</title>
+  <style>
+    body { font-family: sans-serif; background: #f8fafc; padding: 24px; }
+    .catalog-container { max-width: 550px; margin: 0 auto; }
+    
+    .filter-section {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      outline: none;
+    }
+    .search-input:focus { border-color: #3b82f6; }
+
+    ul { list-style: none; padding: 0; margin: 0; }
+
+    .product-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .product-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .product-info { flex: 1; }
+    .product-info h3 { margin: 0 0 4px 0; font-size: 15px; color: #0f172a; }
+    .product-info p { margin: 0; font-size: 13px; color: #64748b; }
+
+    /* Conditional Styling Classes */
+    .out-of-stock {
+      opacity: 0.55;
+      background: #f1f5f9;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 8px;
+    }
+    .badge-in { background: #dcfce7; color: #166534; }
+    .badge-out { background: #fee2e2; color: #991b1b; }
+
+    .stock-btn {
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .stock-btn:hover { background: #f8fafc; }
+    
+    .no-results {
+      color: #94a3b8;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="catalog-container">
+    <h1>Product Inventory Catalog</h1>
+    
+    <div class="filter-section">
+      <input type="text" id="category-search" class="search-input" placeholder="Filter by category (e.g. Electronics, Audio)..." />
+    </div>
+
+    <ul id="product-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+Starter Data & Instructions (app.js)
+JavaScript
+
+const products = [
+  {
+    sku: "PRD-101",
+    details: {
+      name: "Wireless Headphones",
+      category: "Audio",
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150"
+    },
+    price: 99.99,
+    inStock: true
+  },
+  {
+    sku: "PRD-102",
+    details: {
+      name: "Mechanical Keyboard",
+      category: "Accessories",
+      image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=150"
+    },
+    price: 129.50,
+    inStock: false
+  },
+  {
+    sku: "PRD-103",
+    details: {
+      name: "Gaming Mouse",
+      category: "Accessories",
+      image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=150"
+    },
+    price: 49.99,
+    inStock: true
+  },
+  {
+    sku: "PRD-104",
+    details: {
+      name: "USB-C Studio Microphone",
+      category: "Audio",
+      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=150"
+    },
+    price: 79.00,
+    inStock: false
+  }
+];
+
+Step-by-Step Instructions
+	1	Target Key Elements:
+	◦	Select #product-list and #category-search using document.querySelector.
+
+	2	Build renderCatalog(productList) Function:
+	◦	Clear the #product-list container (innerHTML = '').
+	◦	Conditional Check: If productList is empty, render a simple <li> with class no-results stating "No products found matching that category." and return early.
+
+	◦	Loop over productList using a for loop.
+	3	Construct Item Elements inside the Loop:
+	◦	Create an <li> element (document.createElement('li')) and set its base class to product-card.
+	◦	Conditional Styling: If product.inStock is false, add the out-of-stock class to the li element (li.classList.add('out-of-stock')).
+	◦	Create <img> using DOM methods:
+	▪	document.createElement('img')
+	▪	Set src to product.details.image
+	▪	Set alt to product.details.name
+	▪	Add class product-img
+	◦	Create Info <div>:
+	▪	Create a div element with class product-info.
+	▪	Conditionals for Badge: Determine if the item is in stock:
+	▪	If true: badge HTML is <span class="badge badge-in">In Stock</span>
+	▪	If false: badge HTML is <span class="badge badge-out">Out of Stock</span>
+	▪	Set innerHTML to display product name, badge, price formatted to two decimals ($${product.price.toFixed(2)}), and category (Category: ${product.details.category}).
+	◦	Create Action <button>:
+	▪	Create a button element with class stock-btn.
+	▪	Text content: If product.inStock is true, label it "Mark Out of Stock". Otherwise, label it "Mark In Stock".
+
+
+	4	Attach Click Event Listener to Button:
+	◦	Add a click event listener to the button.
+	◦	Inside the listener:
+	▪	Toggle product.inStock = !product.inStock.
+	▪	Re-run your render logic (or call handleFilter()) so the UI updates to reflect the new state and conditional styling automatically!
+
+
+	5	Attach input Event Listener to Filter Input:
+	◦	Add an input event listener to #category-search.
+	◦	Extract user text using e.target.value.toLowerCase().trim().
+	◦	Use .filter() (or a for loop) to return only products whose product.details.category.toLowerCase() includes the search term.
+	◦	Call renderCatalog() with the filtered results.

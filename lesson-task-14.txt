@@ -1,0 +1,64 @@
+Task 1: Boolean Negation & Filtering (!flag)
+Description
+In this exercise, you'll practice using the logical NOT operator (!) to negate boolean properties—such as checking if a feature is not active, if an item is unpaid, or if an employee is not married—and pull specific values based on that condition.
+Starter Data
+Copy this array of user account records into your script:
+JavaScript
+
+const userProfiles = [
+  { name: "Alex Reader", isMarried: false, hasCompletedOnboarding: true, dependentCount: 0 },
+  { name: "Sam Parker", isMarried: true, hasCompletedOnboarding: true, dependentCount: 2 },
+  { name: "Taylor Swift", isMarried: false, hasCompletedOnboarding: false, dependentCount: 0 },
+  { name: "Jordan Cole", isMarried: true, hasCompletedOnboarding: false, dependentCount: 1 }
+];
+
+
+Instructions & Step-by-Step Guidance
+	1	Pull Single Tax Allowance Candidates (Single Status Check):
+	◦	Create an empty array singleTaxCandidates = [].
+	◦	Loop through userProfiles.
+	◦	Use boolean negation !profile.isMarried to check if the user is single (i.e., isMarried is false).
+	◦	If !profile.isMarried evaluates to true, push their name into singleTaxCandidates.
+	2	Pull Incomplete Onboarding Reminders:
+	◦	Create an empty array pendingOnboardingList = [].
+	◦	Loop through userProfiles.
+	◦	Use boolean negation !profile.hasCompletedOnboarding to check if they have not completed onboarding.
+	◦	If !profile.hasCompletedOnboarding is true, push an object { name: profile.name, status: "Action Required" } into pendingOnboardingList.
+	3	Log both resulting arrays to the console.
+
+
+Task 2: Functions & Reusable Calculation Engine
+Description
+Build two clean, reusable functions to calculate employee bonuses based on years of service and company performance.
+Starter Data
+Copy this employee array into your script:
+JavaScript
+const teamMembers = [
+  { name: "David", yearsOfService: 2, baseSalary: 35000 },
+  { name: "Sarah", yearsOfService: 6, baseSalary: 52000 },
+  { name: "Michael", yearsOfService: 4, baseSalary: 41000 }
+];
+
+Instructions & Step-by-Step Guidance
+	1	Function 1: calculateBonusMultiplier(years)
+	◦	Declare a function named calculateBonusMultiplier that accepts one parameter: years (a number).
+	◦	Rules:
+	▪	If years >= 5, return 0.15 (15% bonus multiplier).
+	▪	If years >= 3, return 0.10 (10% bonus multiplier).
+	▪	Otherwise, return 0.05 (5% bonus multiplier).
+	2	Function 2: generateBonusReport(employees)
+	◦	Declare a function named generateBonusReport that accepts employees (an array).
+	◦	Inside the function:
+	▪	Create an empty array bonusReport = [].
+	▪	Loop through the employees array.
+	▪	Call calculateBonusMultiplier(employee.yearsOfService) inside the loop to get their multiplier.
+	▪	Calculate the bonus amount: employee.baseSalary * multiplier.
+	▪	Push { name: employee.name, bonus: bonusAmount } into bonusReport.
+	◦	Return the completed bonusReport array from the function.
+	3	Execution:
+	◦	Call generateBonusReport(teamMembers) and log the returned array to the console.
+
+Key Concepts to Focus On:
+	•	Logical Negation (!): Flipping boolean values so that !false becomes true (e.g., !isMarried matches single users).
+	•	Pure Helper Functions: Functions taking inputs and returning values cleanly without side effects.
+	•	Function Composition: Invoking a helper function (calculateBonusMultiplier) inside an iteration loop within another function.

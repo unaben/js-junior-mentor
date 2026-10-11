@@ -1,0 +1,40 @@
+<!-- ===== SAMPLE CARD TEMPLATE (one product) ===== -->
+<!-- Add the class 'show-description' to the <li> when product.detailsVisible === true -->
+<li class="product-card" data-id="1">
+  <article class="card-inner">
+    <div class="card-image-wrap">
+      <img
+        class="product-img"
+        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+        alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="card-info">
+      <span class="category-tag">men's clothing</span>
+      <h2 class="product-title">
+        Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+      </h2>
+      <p class="product-price">$109.95</p>
+      <p class="product-rating">★ 3.9 (120 reviews)</p>
+    </div>
+
+    <!-- Hidden until the card has 'show-description' -->
+    <div class="card-details">
+      <p>
+        Your perfect pack for everyday use and walks in the forest. Stash your
+        laptop (up to 15 inches) in the padded sleeve, your everyday
+      </p>
+    </div>
+
+    <!-- data-id lets ONE listener on the <ul> know which product was clicked -->
+    <button class="toggle-btn" type="button" data-id="1">
+      Show Description
+    </button>
+  </article>
+</li>
+<!-- ===== END SAMPLE CARD ===== -->
+
+<!-- ===== SAMPLE EMPTY STATE ===== -->
+<!-- <li class="no-results">No products match your filters.</li> -->

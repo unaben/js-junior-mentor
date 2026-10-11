@@ -1,0 +1,38 @@
+Task Prompt for Junior Developer
+Task: Build a Developer Portfolio Layout using HTML & CSS (Flexbox)
+Could you attempt to build this personal portfolio page based on the screenshot using HTML, CSS, and Flexbox? 
+We will review it together later. 
+It’s a great exercise for practicing multi-section layouts, Flexbox alignments (like cards and navigation headers), and proper semantic HTML tags.
+
+Requirements & Layout Guidelines
+
+1. Header & Hero Banner Section
+	•	Container: Use a dark teal background for the entire hero banner with a dark bottom border separating it from the main content.
+	•	Navigation (<nav>):
+	◦	Place the logo (Ella Magnifica) on the left.
+	◦	Place rounded pill-style navigation buttons on the right (About Me, Portfolio, Experience).
+	•	Hero Content:
+	◦	Use an <h1> tag for "Hiring A Full-Stack Developer?".
+	◦	Use a <p> tag for the summary text, highlighting key terms 
+		(React, NodeJS, TypeScript, innovative, eco-friendly, sustainable energy sector) using <strong> and <em> tags.
+
+2. About Me Section
+	•	Heading: Use <h2> centered for "ABOUT ME".
+	•	Content: Include subheadings (<h3>) for "Introduction" and "Technical Skills".
+	•	Skills List: Use <ul> and <li> tags arranged into a two-column flex layout for the list items 
+		(HTML & CSS, JavaScript, TypeScript on the left; React, Redux, NodeJS on the right).
+
+3. Portfolio Section
+	•	Container: Give this section a light pink/rose background.
+	•	Heading: Use <h2> centered for "PORTFOLIO".
+	•	Cards Container: Use Flexbox to lay out 3 portfolio cards side by side.
+	•	Card Styling: White background, dark magenta border, rounded corners, and a subtle drop shadow (box-shadow).
+	•	Card Content: Include a title (<h3>), description paragraph, a solid magenta "READ MORE" button, and a link below for "GitHub Repo".
+
+4. Experience Section
+	•	Heading: Use <h2> centered for "EXPERIENCE".
+	•	List: Include two job entries with an <h3> for "Job Title" followed by description paragraphs.
+
+5. Footer
+	•	Wrap in a <footer> tag with a dark background color.
+	•	Include copyright text centered on the left: "© Ella Magnifica".

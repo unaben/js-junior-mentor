@@ -1,0 +1,75 @@
+const fulfillmentNetwork = [
+  {
+    regionId: "REG-NORTH",
+    regionName: "Manchester Hub",
+    isActive: true,
+    manager: { name: "Sarah Jenkins", email: "sarah.j@hub.com" },
+    warehouses: [
+      {
+        code: "WH-MCR-1",
+        isOperational: true,
+        inventory: [
+          { sku: "SKU-101", title: "Wireless Keyboard", category: "Peripherals", stock: 120, price: 45.00, requiresRestock: false },
+          { sku: "SKU-102", title: "Ergonomic Chair", category: "Furniture", stock: 8, price: 250.00, requiresRestock: true }
+        ]
+      },
+      {
+        code: "WH-MCR-2",
+        isOperational: false,
+        inventory: [
+          { sku: "SKU-103", title: "USB-C Cable", category: "Accessories", stock: 0, price: 12.00, requiresRestock: true }
+        ]
+      }
+    ]
+  },
+  {
+    regionId: "REG-MIDLANDS",
+    regionName: "Birmingham Hub",
+    isActive: true,
+    manager: { name: "David Chen", email: "david.c@hub.com" },
+    warehouses: [
+      {
+        code: "WH-BHX-1",
+        isOperational: true,
+        inventory: [
+          { sku: "SKU-201", title: "UltraWide Monitor", category: "Displays", stock: 15, price: 499.99, requiresRestock: false },
+          { sku: "SKU-202", title: "Desk Lamp", category: "Furniture", stock: 5, price: 35.00, requiresRestock: true },
+          { sku: "SKU-203", title: "Ergonomic Chair", category: "Furniture", stock: 3, price: 260.00, requiresRestock: true }
+        ]
+      }
+    ]
+  },
+  {
+    regionId: "REG-SOUTH",
+    regionName: "London Hub",
+    isActive: false,
+    manager: { name: "Elena Rostova", email: "elena.r@hub.com" },
+    warehouses: [
+      {
+        code: "WH-LDN-1",
+        isOperational: true,
+        inventory: [
+          { sku: "SKU-301", title: "Mechanical Keyboard", category: "Peripherals", stock: 45, price: 89.99, requiresRestock: false }
+        ]
+      }
+    ]
+  }
+];
+
+// Instructions & Step-by-Step Questions
+// Complete all 12 sub-tasks using standard for loops (e.g., for (let i = 0; i < ...; i++)).
+// Part 1: Single Loop & Direct Lookups
+// 	1	Find a Single Region Manager by Name: Loop through fulfillmentNetwork to locate the manager named "David Chen". When found, log their email address and break the loop.
+// 	2	Collect Regions by Boolean Status: Create an array activeRegions = []. Loop through fulfillmentNetwork and push the regionName of all regions where isActive === true.
+// 	3	Recreate Region Contact Object: Create an array regionContacts = []. Loop through fulfillmentNetwork and push a newly constructed object { region: regionName, managerName: manager.name, contactEmail: manager.email } for every region.
+// 	4	Find Inactive Region Details: Loop through fulfillmentNetwork to find the first region where isActive === false. Store its whole manager object into a variable inactiveManager and log it.
+// Part 2: Nested Loops (Region → Warehouses)
+// 	5	Find Warehouse Codes by Operational Boolean: Create an array operationalWarehouseCodes = []. Write a nested loop (Region → Warehouses) to collect the code of every warehouse where isOperational === true.
+// 	6	Find Warehouses Belonging to Active Regions Only: Create an array activeRegionWarehouseCodes = []. Write a nested loop, but check if the region's isActive boolean is true before looping through its warehouses. Collect their code strings.
+// 	7	Recreate Warehouse Summary Objects: Create an array warehouseSummaries = []. Write a nested loop to construct a new object for every warehouse across all regions: { region: regionName, code: warehouse.code, isOperational: warehouse.isOperational }.
+// Part 3: Deeply Nested Loops (Region → Warehouses → Inventory)
+// 	8	Find Single Product by SKU: Write a 3-level nested loop (Region → Warehouses → Inventory) to search for SKU "SKU-201". Once found, log the product title and its warehouse code, then stop all loops (or set a flag to exit).
+// 	9	Find Multiple Products Matching Name across Network: Create an array matchingChairs = []. Write a 3-level nested loop to find all products with the title "Ergonomic Chair". Push an object containing { warehouseCode, stock, price } for each match found.
+// 	10	Collect All Restock Alert Products (Boolean Match): Create an array restockList = []. Write a 3-level nested loop to find all inventory items where requiresRestock === true. Push an object containing { sku: item.sku, title: item.title, stock: item.stock }.
+// 	11	Recreate Restock Task Ticket Objects: Create an array actionTickets = []. Write a 3-level nested loop to find inventory items where requiresRestock === true AND isOperational === true (checking the warehouse boolean). Push a newly formatted ticket object:{ ticketId: "TICKET-" + item.sku, location: regionName + " (" + warehouse.code + ")", itemTitle: item.title, currentStock: item.stock }.
+// 	12	Calculate Total Inventory Valuation for a Specific Category: Create a variable totalFurnitureValue = 0. Write a 3-level nested loop to find every item where category === "Furniture". Add (item.stock * item.price) to totalFurnitureValue for each matching item. Log the final total formatted to 2 decimal places.

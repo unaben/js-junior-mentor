@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+.menupontok {
+  list-style: none;
+}
+:root {
+  --primary: #ff6a00;
+  --primary-dark: #cc5200;
+  --secondary: #ffb300;
+  --secondary-light: #ffe0a3;
+  --bg-main: #eee;
+  --bg-card: #ffffff;
+  --text-main: #3a2a1a;
+  --text-muted: #7a5a3a;
+  --border: #ffd2a3;
+  --border-dark: var(--text-main);
+  --line: 3px var(--secondary) ridge;
+  --box-shadow: 0 0 3px gray;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main);
+}
+
+header {
+  height: 350px;
+  margin-bottom: 2px #ffb300;
+}
+
+.headertext {
+  padding: 15px;
+}
+
+.menupontok {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.keresgelek {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #ffb300;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+h1 {
+  color: #cc5200;
+}
+
+.ukereso {
+  font-weight: bold;
+}
+
+.irj {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #ffb300;
+  color: black;
+  font-weight: bold;
+}
+
+.menupont {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.kartya {
+  height: 100%;
+}
+
+section {
+  padding: 100px 0;
+  border-bottom: var(--line);
+}
+section:nth-child(even) {
+  background-color: var(--secondary-light);
+}
+section:nth-child(odd) {
+  background-color: var(--bg-main);
+}
+.card {
+  border: 1px var(--border) solid;
+  background-color: var(--bg-card);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  padding: 15px;
+  margin: 15px auto;
+}
+
+/* 
+Added so the .card margin doesn't add extra space on top of the gutter:
+*/
+#partnerek .card {
+    margin: 0;
+  }

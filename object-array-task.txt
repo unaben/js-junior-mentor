@@ -1,0 +1,86 @@
+Task 1: Dynamic Property Inspector (Dot & Bracket Notation)
+Description
+In this exercise, you'll practice accessing object properties using both standard dot notation and dynamic bracket notation based on variable keys.
+Starter Data
+Copy this object into your script:
+JavaScript
+
+const serverStatus = {
+  environment: "Production",
+  uptimeHours: 720,
+  isOnline: true,
+  metrics: {
+    cpuUsage: "42%",
+    memoryUsage: "68%",
+    activeUsers: 1450
+  }
+};
+
+Instructions & Step-by-Step Guidance
+	1	Dot Notation Practice:
+	◦	Log the environment property using dot notation (serverStatus.environment).
+	◦	Log the nested cpuUsage property using dot notation (serverStatus.metrics.cpuUsage).
+	2	Dynamic Bracket Notation Practice:
+	◦	Create a variable: const keyToFetch = "uptimeHours";
+	◦	Log the uptime dynamically using serverStatus[keyToFetch].
+	◦	Create another variable: const nestedMetricKey = "activeUsers";
+	◦	Log active users dynamically using serverStatus.metrics[nestedMetricKey].
+	3	User-Driven Dynamic Lookup:
+	◦	Prompt the user for a metric key: const requestedMetric = prompt("Which metric do you want to inspect? (cpuUsage, memoryUsage, activeUsers)");
+	◦	Read and log the requested metric value dynamically using serverStatus.metrics[requestedMetric].
+Task 2: Dynamic Matrix & Fleet Reader (Arrays of Objects)
+Description
+In this task, you will work with a complex array of objects containing nested array data. You'll practice extracting values by dynamically accessing both array indices and object properties.
+Starter Data
+Copy this array into your script:
+JavaScript
+
+const deliveryFleet = [
+  {
+    vanId: "VAN-101",
+    driver: "Marcus",
+    routes: ["Birmingham", "Coventry", "Wolverhampton"],
+    capacityKg: 1200,
+    maintenanceLog: {
+      lastServiced: "2026-08-15",
+      status: "Operational"
+    }
+  },
+  {
+    vanId: "VAN-202",
+    driver: "Elena",
+    routes: ["Manchester", "Salford", "Bolton"],
+    capacityKg: 1500,
+    maintenanceLog: {
+      lastServiced: "2026-09-01",
+      status: "In Service"
+    }
+  },
+  {
+    vanId: "VAN-303",
+    driver: "Devon",
+    routes: ["London", "Reading", "Slough"],
+    capacityKg: 950,
+    maintenanceLog: {
+      lastServiced: "2026-07-20",
+      status: "Pending Repair"
+    }
+  }
+];
+
+Instructions & Step-by-Step Guidance
+	1	Static Array & Nested Lookups:
+	◦	Log the driver name of the second van (index 1).
+	◦	Log the third route ("Wolverhampton") assigned to the first van (index 0).
+	2	Dynamic Index & Property Extraction:
+	◦	Prompt the user for a van index: const vanIndex = Number(prompt("Select a van index (0, 1, or 2):"));
+	◦	Prompt the user for an object property key: const detailKey = prompt("Select detail to inspect (driver, capacityKg):");
+	◦	Extract and log the requested details dynamically: deliveryFleet[vanIndex][detailKey].
+	3	Dynamic Nested Array Extraction:
+	◦	Prompt the user for a route index: const routeIndex = Number(prompt("Select route index (0, 1, or 2):"));
+	◦	Read the route string dynamically using both dynamic van index and dynamic route index: deliveryFleet[vanIndex].routes[routeIndex].
+	◦	Display an alert() using Template Literals: "Van [vanId] driven by [driver] is stopping at [route]."
+Key Concepts to Practice:
+	•	Dot vs. Bracket Notation: Understanding when dot notation fails (variables) and why bracket notation object[variable] is required.
+	•	Array Index Chaining: Accessing nested objects within arrays via array[index].property.
+	•	Dynamic Indexing & Keys: Combining dynamic array indices (array[index]) and dynamic object keys (object[key]) in a single statement.

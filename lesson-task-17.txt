@@ -1,0 +1,157 @@
+Task: Interactive Team Roster & Availability Toggle
+Description
+In this exercise, you will dynamically render a list of team members from an array of nested objects. Each list item will display the team member's avatar image, name, department, and an interactive status button that toggles between "Active" and "Inactive" when clicked.
+HTML Starter Structure (index.html)
+Copy this code into your index.html file:
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Availability Directory</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f5f7; padding: 24px; }
+    h1 { color: #1e293b; }
+    ul { list-style: none; padding: 0; max-width: 500px; }
+    
+    .roster-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .info { flex-grow: 1; }
+    .info h3 { margin: 0 0 4px 0; font-size: 16px; color: #0f172a; }
+    .info p { margin: 0; font-size: 13px; color: #64748b; }
+    
+    .toggle-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    
+    /* Button States */
+    .btn-active { background-color: #dcfce7; color: #166534; }
+    .btn-inactive { background-color: #fee2e2; color: #991b1b; }
+  </style>
+</head>
+<body>
+
+  <h1>Team Availability Directory</h1>
+  <ul id="team-roster"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+Starter Data & Instructions (app.js)
+Copy this dataset into your app.js file and follow the step-by-step instructions below:
+JavaScript
+
+const teamMembers = [
+  {
+    id: "MEM-01",
+    profile: {
+      fullName: "Sarah Jenkins",
+      avatarUrl: "https://i.pravatar.cc/150?img=5",
+      details: { department: "Engineering", role: "Frontend Lead" }
+    },
+    isAvailable: true
+  },
+  {
+    id: "MEM-02",
+    profile: {
+      fullName: "David Chen",
+      avatarUrl: "https://i.pravatar.cc/150?img=11",
+      details: { department: "Design", role: "UI/UX Designer" }
+    },
+    isAvailable: false
+  },
+  {
+    id: "MEM-03",
+    profile: {
+      fullName: "Elena Rostova",
+      avatarUrl: "https://i.pravatar.cc/150?img=9",
+      details: { department: "Product", role: "Product Manager" }
+    },
+    isAvailable: true
+  },
+ {
+    id: "MEM-04",
+    profile: {
+      fullName: "Steven Rico",
+      avatarUrl: "https://i.pravatar.cc/150?img=15",
+      details: { department: "QA", role: "Quality assurance lead" }
+    },
+    isAvailable: false
+  }
+];
+Step-by-Step Instructions
+	1	Target the Unordered List Container:
+	◦	Select the <ul> element using document.querySelector('#team-roster').
+
+
+	2	Write a Function renderRoster(members):
+	◦	Clear the container content (container.innerHTML = '').
+	◦	Write a for loop to iterate through members.
+
+
+	3	Build the DOM Elements inside the Loop:
+	◦	Create an <li> element using document.createElement('li') and set li.className = 'roster-card'.
+	◦	Create the Image Element (<img>):
+	▪	Use document.createElement('img').
+	▪	Set its .src property using nested access: member.profile.avatarUrl.
+	▪	Set its .alt property to the member's full name.
+	▪	Add class avatar to the image element (img.className = 'avatar').
+	◦	Create the Info Container (<div>):
+	▪	Create a div element and give it class info.
+	▪	Populate its innerHTML with an <h3> showing member.profile.fullName and a <p> showing 
+		${member.profile.details.role} • ${member.profile.details.department}.
+	◦	Create the Toggle Button (<button>):
+	▪	Create a <button> element using document.createElement('button').
+	▪	Set initial text content and class depending on member.isAvailable:
+	▪	If true: Text = "Active", className = "toggle-btn btn-active".
+	▪	If false: Text = "Inactive", className = "toggle-btn btn-inactive".
+
+
+	4	Attach the Click eventListener:
+	◦	Add a click event listener to the created button (button.addEventListener('click', ...)).
+	◦	Inside the event listener, toggle the member's state:
+	▪	Toggle member.isAvailable = !member.isAvailable (boolean negation!).
+	▪	Update the button's text content ("Active" vs "Inactive").
+	▪	Update the button's CSS classes (btn-active vs btn-inactive).
+
+
+	5	Assemble and Append:
+	◦	Append img, infoDiv, and button to the li card element (li.appendChild(...)).
+	◦	Append the li card element to the main <ul> container.
+
+
+	6	Execute:
+	◦	Call renderRoster(teamMembers) at the bottom of your script.
+
+
+Key Concepts Practiced
+	•	DOM Element Creation: Using document.createElement('img'), li, div, button.
+	•	Nested Property Reading: Accessing member.profile.details.department and member.profile.avatarUrl.
+	•	Event Listeners: Attaching click handlers dynamically to generated elements in a loop.
+	•	State & UI Toggling: Mutating data (!isAvailable) and synchronizing DOM attributes/classes on user click.
+

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Városi üzletkereső – Találd meg a boltodat!</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header id="top">
+      <div class="bar">
+        <a class="logo" href="#top"
+          ><img src="img/logo.png" alt="Városi üzletkereső logó"
+        /></a>
+        <span class="site-title">Városi üzletkereső</span>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Menü"
+        >
+          ≡
+        </button>
+        <nav id="menu">
+          <a href="#partnerek">Partnerek</a>
+          <a href="#uzletek">Üzletek</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <h1>Találd meg a boltodat!</h1>
+        <p>
+          Ha nálunk keresel, nemcsak gyorsan megtalálod a számodra megfelelő
+          üzletet, hanem partnereink vásárláskor különböző kedvezményekkel és
+          akciókkal várnak, így még spórolhatsz is.
+        </p>
+        <a class="btn" href="#uzletek">Keresgélek</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="partnerek" class="section grey">
+        <div class="container">
+          <h2>Kiemelt partnereink</h2>
+          <div class="partners">
+            <article class="partner">
+              <img src="img/belvarosi-trend.png" alt="Belvárosi Trend" />
+              <h3>1061 Budapest,<br />Király utca 27.</h3>
+              <p>
+                Divatos és praktikus ruházati termékek különböző stílusokban.
+                Szezonális kínálat és kiegészítők egy helyen.
+              </p>
+            </article>
+            <article class="partner">
+              <img src="img/budai-pekseg.png" alt="Budai Pékség" />
+              <h3>1024 Budapest,<br />Margit körút 52.</h3>
+              <p>
+                Friss kenyerek, péksütemények és helyben készült finomságok
+                minden nap. Gyors reggeli vagy útközbeni harapnivaló is könnyen
+                beszerezhető.
+              </p>
+            </article>
+            <article class="partner">
+              <img src="img/friss-kosar.png" alt="Friss Kosár" />
+              <h3>1094 Budapest,<br />Ferenc körút 18.</h3>
+              <p>
+                Friss zöldségek és gyümölcsök széles választéka, szezonális
+                kínálattal. Egészséges alapanyagok mindennapi főzéshez és
+                életmódhoz.
+              </p>
+            </article>
+            <article class="partner">
+              <img src="img/plus.jpg" alt="Legyél a partnerünk" />
+              <h3>Keress minket!</h3>
+              <p>
+                Ez itt a Te üzleted helye lehet. Vedd fel velünk a kapcsolatot,
+                és legyél a partnerünk!
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="uzletek" class="section sand">
+        <div class="container">
+          <div class="zip-filter">
+            <label for="irsz">Irányítószám:</label>
+            <input
+              type="number"
+              id="irsz"
+              name="irsz"
+              min="1000"
+              max="1239"
+              step="1"
+            />
+          </div>
+          <h2>Üzletek</h2>
+
+          <div class="categories" id="categories">
+            <button type="button" data-funkcio="Élelmiszer">
+              <span class="ico">🛒</span>Élelmiszer
+            </button>
+            <button type="button" data-funkcio="Zöldséges">
+              <span class="ico">🥕</span>Zöldséges
+            </button>
+            <button type="button" data-funkcio="Elektronika">
+              <span class="ico">💻</span>Elektronika
+            </button>
+            <button type="button" data-funkcio="Gyógyszertár">
+              <span class="ico">💊</span>Gyógyszertár
+            </button>
+            <button type="button" data-funkcio="Ruházat">
+              <span class="ico">👕</span>Ruházat
+            </button>
+            <button type="button" data-funkcio="Papír-írószer">
+              <span class="ico">📝</span>Papír-írószer
+            </button>
+            <button type="button" data-funkcio="Pékség">
+              <span class="ico">🥐</span>Pékség
+            </button>
+            <button type="button" data-funkcio="">
+              <span class="ico">🧺</span>Összes
+            </button>
+          </div>
+
+          <p class="summary" id="summary">Keresési eredmény: 2 találat</p>
+
+          <div class="results" id="results">
+            <article class="shop">
+              <img
+                class="shop-logo"
+                src="img/logo.png"
+                alt="Pesti Elektronika"
+              />
+              <div class="shop-body">
+                <span class="tag">elektronika</span>
+                <h3>Pesti Elektronika</h3>
+                <p>1072 Budapest, Rákóczi út 38</p>
+              </div>
+              <div class="shop-side">
+                <button type="button" class="info" aria-label="Nyitvatartás">
+                  i
+                </button>
+              </div>
+            </article>
+            <article class="shop">
+              <img
+                class="shop-logo"
+                src="img/villam-elektronika.png"
+                alt="Villám Elektronika"
+              />
+              <div class="shop-body">
+                <span class="tag">elektronika</span>
+                <h3>Villám Elektronika</h3>
+                <p>1072 Budapest, Rákóczi út 44</p>
+              </div>
+              <div class="shop-side">
+                <dl class="hours">
+                  <dt>hétfő:</dt>
+                  <dd>9 - 18</dd>
+                  <dt>kedd:</dt>
+                  <dd>9 - 18</dd>
+                  <dt>szerda:</dt>
+                  <dd>9 - 18</dd>
+                  <dt>csütörtök:</dt>
+                  <dd>9 - 18</dd>
+                  <dt>péntek:</dt>
+                  <dd>9 - 18</dd>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="kapcsolat" class="section grey">
+        <div class="container narrow">
+          <h2>Kapcsolat</h2>
+          <div class="contact-card">
+            <span class="c-ico">📍</span>
+            <div>
+              <strong>Cím</strong><span>1051 Budapest, Váci utca 2.</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="c-ico">📞</span>
+            <div><strong>Telefon</strong><span>+36 20 987 6543</span></div>
+          </div>
+          <div class="contact-card">
+            <span class="c-ico">✉️</span>
+            <div><strong>Email</strong><span>hello@varosikereso.hu</span></div>
+          </div>
+          <div class="contact-card">
+            <span class="c-ico">🏪</span>
+            <div>
+              <strong>Partner üzletek</strong
+              ><span>100+ bolt országszerte</span>
+            </div>
+          </div>
+          <p class="center">
+            <a class="btn" href="mailto:hello@varosikereso.hu"
+              >✈ Írj nekünk !</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <img src="img/logo.png" alt="Városi üzletkereső logó" />
+      <span class="author">Vezetéknév Keresztnév</span>
+      <a class="to-top" href="#top" aria-label="Vissza az oldal tetejére">↑</a>
+    </footer>
+  </body>
+</html>

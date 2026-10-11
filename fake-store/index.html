@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalogue</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Product Catalogue</h1>
+
+        <div class="controls">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by title..."
+            aria-label="Search products by title"
+          />
+
+          <select id="category-filter" aria-label="Filter products by category">
+            <option value="all">All categories</option>
+            <!-- Category options are added by JavaScript -->
+          </select>
+        </div>
+      </header>
+
+      <p id="status-message" class="status-message" aria-live="polite"></p>
+
+      <main>
+        <ul class="product-grid" id="product-list">
+          <!-- Product cards are rendered here by JavaScript -->
+        </ul>
+      </main>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

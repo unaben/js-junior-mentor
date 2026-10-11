@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="sablon.css" />
+    <script src="index.js" defer></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Városi üzletkereső</title>
+  </head>
+
+  <body id="top">
+    <header>
+      <div class="container d-flex">
+        <div>
+          <img src="logo.png" alt="logo.png" height="80px" />
+          <div class="ukereso">Városi üzletkereső</div>
+          <h1>Találd meg a boltodat!</h1>
+          <p class="headertext">
+            Ha nálunk keresel, nemcsak gyorsan megtalálod a számodra megfelelő
+            üzletet, hanem partnereink vásárláskor különböző kedvezményekkel és
+            akciókkal várnak, így még <br />
+            spórolhatsz is.
+          </p>
+          <a href="#uzletek" class="keresgelek">Keresgélek</a>
+        </div>
+        <nav>
+          <div class="text-end hamburger">≡</div>
+          <ul class="menupontok">
+            <li><a href="#partnerek" class="menupont">Partnerek</a></li>
+            <li><a href="#uzletek" class="menupont">Üzletek</a></li>
+            <li><a href="#kapcsolat" class="menupont">Kapcsolat</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="partnerek">
+        <div class="container">
+          <h2 class="text-center">Kiemelt partnereink</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-4 g-3">
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="logok/belvarosi-trend.png"
+                  alt="Belvárosi Trend logó"
+                  class="w-100"
+                />
+                <h3>1061 Budapest,<br />Király utca 27.</h3>
+                <p>
+                  Divatos és praktikus ruházati termékek különböző stílusokban.
+                  Szezonális kínálat és kiegészítők egy helyen.
+                </p>
+              </div>
+            </div>      
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="logok/budai-pekseg.png"
+                  alt="Budai Pékség logó"
+                  class="w-100"
+                />
+                <h3>1024 Budapest,<br />Margit körút 52.</h3>
+                <p>
+                  Friss kenyerek, péksütemények és helyben készült finomságok minden
+                  nap. Gyors reggeli vagy útközbeni harapnivaló is könnyen
+                  beszerezhető.
+                </p>
+              </div>
+            </div>      
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="logok/friss-kosar.png"
+                  alt="Friss Kosár logó"
+                  class="w-100"
+                />
+                <h3>1094 Budapest,<br />Ferenc körút 18.</h3>
+                <p>
+                  Friss zöldségek és gyümölcsök széles választéka, szezonális
+                  kínálattal. Egészséges alapanyagok mindennapi főzéshez és
+                  életmódhoz.
+                </p>
+              </div>
+            </div>      
+            <div class="col">
+              <div class="card h-100">
+                <img src="plus.jpg" alt="A te üzleted" class="w-100" />
+                <h3>Keress minket!</h3>
+                <p>
+                  Ez itt a Te üzleted helye lehet. Vedd fel velünk a kapcsolatot, és
+                  legyél a partnerünk!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="uzletek">
+        <div class="container">
+          <div class="text-end">
+            <label for="irsz">Irányítószám</label><br />
+            <input type="text" name="irsz" id="irsz" min="1000" max="1239" />
+          </div>
+
+          <h2>Üzletek</h2>
+          <div class="row row-cols-2 row-cols-md-4">
+            <!--mobilon 2 amugy 4-->
+            <div class="row"><button class="w-100">🛒 Élelmiszer</button></div>
+            <div class="row"><button class="w-100">🥕 Zöldséges</button></div>
+            <div class="row"><button class="w-100">💻 Elektronika</button></div>
+            <div class="row">
+              <button class="w-100">💊 Gyógyszertár</button>
+            </div>
+            <div class="row"><button class="w-100">👕 Ruházat</button></div>
+            <div class="row">
+              <button class="w-100">📝 Papír-írószer</button>
+            </div>
+            <div class="row"><button class="w-100">🥐 Pékség</button></div>
+            <div class="row"><button class="w-100">🧺 Összes</button></div>
+          </div>
+          <div></div>
+          <p>Eredmény információ: "Keresési eredmény: 2 találat"</p>
+          <div>
+            <div class="row card store-card">
+              <div class="row">
+                <div class="col-md-2">
+                  <img
+                    class="store-logo"
+                    src="logo.png"
+                    alt="logo.png"
+                    height="80px"
+                  />
+                </div>
+
+                <div class="store-info col-md">
+                  <span class="store-category"> elektronika </span>
+                  <h4 class="store-name">Pesti Elektronika</h4>
+                  <p class="store-adress">1072 Budapest, Rákóczi út 38</p>
+                </div>
+                <div class="col-md-2">
+                  <p>
+                    <span><i class="fa-solid fa-circle-info fa-2xl"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row card store-card">
+              <div class="row">
+                <div class="col-md-2">
+                  <img
+                    class="store-logo"
+                    src="logok/villam-elektronika.png"
+                    alt="villam-elektronika.png"
+                    height="80px"
+                  />
+                </div>
+                <div class="store-info col-md">
+                  <span class="store-category"> elektronika </span>
+                  <h4 class="store-name">Villám Elektronika</h4>
+                  <p class="store-adress">1072 Budapest, Rákóczi út 44</p>
+                </div>
+                <div class="col-md-2">
+                  <p>
+                    <span><i class="fa-solid fa-circle-info fa-2xl"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kapcsolat">
+        <div class="container">
+          <h2>Kapcsolat</h2>
+
+          <div class="contact-items">
+            <div class="card contact-item">
+              <i class="fas fa-location-dot icon"></i>
+              <div>
+                <strong>Cím</strong>
+                <p>1051 Budapest, Váci utca 2.</p>
+              </div>
+            </div>
+
+            <div class="card contact-item">
+              <i class="fas fa-phone icon"></i>
+              <div>
+                <strong>Telefon</strong>
+                <p>+36 20 987 6543</p>
+              </div>
+            </div>
+
+            <div class="card contact-item">
+              <i class="fas fa-envelope icon"></i>
+              <div>
+                <strong>Email</strong>
+                <p>hello@varosikereso.hu</p>
+              </div>
+            </div>
+
+            <div class="card contact-item">
+              <i class="fas fa-store icon"></i>
+              <div>
+                <strong>Partner üzletek</strong>
+                <p>100+ bolt országszerte</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-center">
+            <a
+              class="irj btn btn-warning px-5"
+              href="mailto:hello@varosikereso.hu"
+              ><i class="fas fa-paper-plane"></i> Írj nekünk !</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <img src="logo.png" alt="logo.png" height="80" />
+        <p class="author">Achukwu-Szirmai Patrick</p>
+      </div>
+      <a href="#top"><i class="fa-solid fa-square-caret-up fa-2xl"></i></a>
+    </footer>
+  </body>
+</html>

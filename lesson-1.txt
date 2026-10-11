@@ -1,0 +1,56 @@
+Task: Build a Landing Page Layout using HTML & CSS (Flexbox)
+
+Attempt to build the webpage shown in the image in the attachment using HTML, CSS, and Flexbox. 
+We will go through it together in the evening. 
+It will help you understand how to approach building responsive layouts, 
+structuring semantic HTML, and applying modern CSS techniques.
+
+Requirements & Structure Guidelines
+1. Header / Navigation
+Use a <header> tag containing a <nav> bar.
+
+Use Flexbox to align the brand name (Gymtastic) to the left and navigation links (Home, About Us, Contact Us) to the right.
+
+2. Main Content Section
+Heading: Use <h1> for the main title: "Fitness for life!"
+
+Paragraphs: Use <p> tags for the body copy:
+
+"Every gym is designed with you in mind, from the way they’re laid out, to the range of equipment available."
+
+"Get your membership today and save a whopping 50%!" (Tip: Use a <strong> tag to highlight 50%).
+
+Call to Action: Create a styled button or link for GET MEMBERSHIP.
+
+3. Social Links Section
+Heading: Use <h2> or <h3> for "Follow us on".
+
+Social Buttons: Use a flex container to horizontally align the buttons for Instagram, Facebook, and YouTube.
+
+Styling: Give each button its appropriate background color, rounded corners (border-radius), bold white text, and a soft drop shadow (box-shadow).
+
+4. Footer Section
+Wrap this section inside a <footer> tag with a dark blue background and white text.
+
+Heading: Use <h3> or <h4> for "Popular features".
+
+List Structure: Use semantic lists (<ul> and <li>) to organize the topics:
+
+Gyms Near Me
+
+Nested list items: Gyms in London, Gyms in Cardiff, Gyms in Glasgow
+
+Fitness Classes
+
+Personal Trainers
+
+Gym Membership Deals & Offers
+
+Key Concepts to Focus On:
+Semantic Tags: Use <header>, <nav>, <main>, <section>, and <footer> to give the document proper structure.
+
+Flexbox Layouts: Use display: flex, justify-content, and align-items to handle alignment across sections.
+
+Typography & Spacing: Focus on matching font weights, padding, margins, and color contrasts.
+
+Good luck! Have a go at it, and bring any questions or challenges you run into when we review it this evening.

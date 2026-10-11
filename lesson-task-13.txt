@@ -1,0 +1,44 @@
+Task: E-Commerce Order & Discount Calculator
+
+Description
+In this exercise, you will create reusable functions to calculate item totals, apply promotional discount codes, and format final invoice summaries.
+Instructions & Step-by-Step Guidance
+
+1. Starter Data
+Copy this order items array into your script:
+JavaScript
+
+const cartItems = [
+  { name: "Wireless Headphones", price: 120, quantity: 2 },
+  { name: "USB-C Charging Cable", price: 15, quantity: 4 },
+  { name: "Mechanical Keyboard", price: 95, quantity: 1 }
+];
+
+2. Function 1: calculateSubtotal(items)
+	•	Write a function declaration named calculateSubtotal that accepts one parameter: an array of cart items.
+	•	Inside the function, use a for loop to compute the subtotal by multiplying price * quantity for each item and summing them up.
+	•	Return the total subtotal number from the function.
+
+3. Function 2: applyDiscount(subtotal, promoCode)
+	•	Write a function named applyDiscount that takes two parameters: subtotal (a number) and promoCode (a string).
+	•	Apply discount logic based on the code:
+	◦	If promoCode is "SAVE10", return the subtotal with a 10% discount applied (subtotal * 0.90).
+	◦	If promoCode is "SAVE20", return the subtotal with a 20% discount applied (subtotal * 0.80).
+	◦	Otherwise, return the original subtotal unchanged.
+	•	Tip: Convert promoCode to uppercase before checking to handle inputs like "save10".
+
+4. Function 3: generateReceipt(items, promoCode)
+	•	Write a function named generateReceipt that takes items and promoCode.
+	•	Inside generateReceipt:
+	◦	Call calculateSubtotal(items) and store the result in a variable.
+	◦	Call applyDiscount(subtotal, promoCode) using the computed subtotal and store the discounted total.
+	◦	Format the final amount to 2 decimal places using .toFixed(2).
+	•	Return a formatted Template Literal string: "Order Summary: Subtotal £[subtotal], Final Price after '[promoCode]': £[finalPrice]"
+
+5. Execution & Testing
+Call generateReceipt(cartItems, "SAVE10") inside a console.log() statement to display the complete invoice breakdown.
+Key Concepts to Practice:
+	•	Function Parameters & Arguments: Passing data into functions cleanly.
+	•	Return Values (return): Sending calculated values back out of functions to be re-used elsewhere.
+	•	Function Composition: Calling one function inside another function (calculateSubtotal inside generateReceipt).
+	•	Clean Code: Keeping functions focused on a single responsibility.
